@@ -179,7 +179,7 @@
   outline-offset: -6px;
   border-radius: 8px;
   margin: 0;
-  animation: shrink-and-grow 1s infinite;
+  animation: shrink-and-grow 1s infinite 1s;
 }
 
 @keyframes shrink-and-grow {
