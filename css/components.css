@@ -151,7 +151,7 @@
   align-items: center;
   z-index: -1;
   transform: scale(0);
-  transition: transform 0.3s;
+  transition: transform 1s, z-index 0s;
 }
 
 .activate-disable-card {
