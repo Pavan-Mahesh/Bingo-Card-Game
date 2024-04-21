@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+* {
+  user-select: none;
+}
+
+body {
+  width: 100svw;
+  height: 100svh;
+  background-image: url("../images/beach-pixel.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0px;
+  padding: 0px;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-image: url("../images/beach-pixel.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(3px);
+  z-index: -1;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (orientation: portrait) {
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+  }
+
+  @media (max-height: 565px) {
+    .main-container {
+      align-items: start;
+    }
+  }
+
+  @media (max-width: 280px) {
+    .main-container {
+      justify-content: start;
+    }
+  }
+}
+
+
+@media (orientation: landscape) {
+  .content-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .bingo-card {
+    grid-row: span 2;
+  }
+
+  @media (max-height: 296px) {
+    .main-container {
+      align-items: start;
+    }
+  }
+  
+  @media (max-width: 612px) {
+    .main-container {
+      justify-content: start;
+    }
+  }
+}

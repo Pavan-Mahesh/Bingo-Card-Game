@@ -1,0 +1,261 @@
+.bingo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.7));
+}
+
+.wood-bg-image {
+  width: 280px;
+  aspect-ratio: 2 / 1;
+  object-fit: fill;
+}
+
+.bingo-letters-flex {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.bingo-letters-flex > * {
+  position: relative;
+  text-align: center;
+}
+
+.bingo-letters-flex * .color-letter {
+  position: absolute;
+  top: 0px;
+}
+
+.base-letter,
+.color-letter {
+  font-family: Lilita One;
+  font-size: 62px;
+  margin: 0px;
+}
+
+.base-letter {
+  color: whitesmoke;
+
+  --slides-color: rgb(145, 145, 145);
+  text-shadow: 
+      0px 2px 0px var(--slides-color),
+      0px 4px 0px var(--slides-color),
+      0px 6px 2px rgba(0, 0, 0, 0.6),
+      0px 10px 4px rgba(0, 0, 0, 0.3),
+      0px 15px 8px rgba(0, 0, 0, 0.1);
+}
+
+.color-letter {
+  background-image: linear-gradient(rgb(255, 220, 75), rgb(255, 150, 20));
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 0.5px rgb(186, 19, 10);
+  opacity: 0;
+}
+
+.add-color-to-letter {
+  .base-letter {
+    --slides-color: rgb(186, 19, 10);
+    text-shadow: 
+      0px 2px 0px var(--slides-color),
+      0px 6px 0px var(--slides-color),
+      0px 9px 2px rgba(0, 0, 0, 0.6),
+      0px 14px 4px rgba(0, 0, 0, 0.3),
+      0px 20px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .color-letter {
+    opacity: 1;
+    filter: brightness(110%);
+  }
+
+  .base-letter,
+  .color-letter {
+    font-size: 70px;
+    transform: translateY(-6px);
+  }
+}
+
+.animate-letter {
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  0% {
+    filter: brightness(105%);
+  }
+  50% {
+    filter: brightness(130%);
+  }
+  100% {
+    filter: brightness(105%);
+  }
+}
+
+.bingo-card {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+}
+
+.numbers-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(5, 54px);
+  grid-template-rows: repeat(5, 54px);
+  gap: 2px;
+  justify-items: center;
+  align-items: center;
+  background-color: rgb(255, 248, 187);
+  border: 4px solid rgb(255, 248, 187);
+}
+
+.number-button {
+  width: 42px;
+  aspect-ratio: 1 / 1;
+  font-family: Lilita One;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0px;
+  z-index: 2;
+}
+
+.highlight-number {
+  background-color: rgb(176, 239, 143);
+  color: rgb(0, 0, 0);
+}
+
+.inline-number {
+  background-color: rgb(191, 4, 17);
+  color: whitesmoke;
+}
+
+.disable-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  transform: scale(0);
+  transition: transform 0.3s;
+}
+
+.activate-disable-card {
+  z-index:4;
+  transform: scale(1);
+}
+
+.you-win {
+  font-family: Lilita One;
+  font-size: 48px;
+  line-height: 58px;
+  color: rgb(255, 255, 255);
+  padding: 0 15%;
+  text-align: center;
+  --shadow-color: rgba(4, 55, 75, 0.5);
+  text-shadow: 
+    1px 1px 1px var(--shadow-color),
+    -1px -1px 1px var(--shadow-color),
+    -1px 1px 1px var(--shadow-color),
+    1px -1px 1px var(--shadow-color);
+  background-color: rgb(16, 117, 153, 0.4);
+  backdrop-filter: blur(1px);
+  box-shadow: inset 0px 0px 12px rgba(0, 120, 140, 0.5);
+  outline: 3px solid rgba(255, 255, 255, 0.8);
+  outline-offset: -6px;
+  border-radius: 8px;
+  margin: 0;
+  animation: shrink-and-grow 1s infinite;
+}
+
+@keyframes shrink-and-grow {
+  0% {
+    transform: rotateZ(0deg) scale(0.9);
+  }
+  48%, 53% {
+    transform: rotateZ(0deg) scale(1);
+  }
+  100% {
+    transform: rotateZ(-0deg) scale(0.9);
+  }
+}
+
+.buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  column-gap: 26px;
+}
+
+.button-with-background {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.7));
+}
+
+.button-with-background button {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-family: Lilita One;
+  font-size: 32px;
+  background-color: transparent;
+  border: none;
+  color: whitesmoke;
+  cursor: pointer;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 
+    1px 1px 1px var(--shadow-color),
+    -1px -1px 1px var(--shadow-color),
+    -1px 1px 1px var(--shadow-color),
+    1px -1px 1px var(--shadow-color);
+}
+
+.button-with-background .action-button-background {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.button-with-background .new-button-background {
+  height: 60px;
+  width: 100px;
+}
+
+.undo-button,
+.redo-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.undo-icon, 
+.redo-icon {
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  width: 36px;
+  filter: drop-shadow(0px 0px 1px var(--shadow-color));
+  margin-bottom: 8px;
+}
+
+.button-with-background:has(button:active) {
+  transform: scale(0.9);
+}

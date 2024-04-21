@@ -1,0 +1,91 @@
+.vertical-grid-lines-grid,
+.horizontal-grid-lines-grid {
+  position: absolute;
+  display: grid;
+  gap: 2px;
+  justify-content: center;
+  z-index: 0;
+}
+
+.vertical-grid-lines-grid {
+  grid-template-columns: repeat(4, 54px);
+  top: 10px;
+  left: 58px;
+}
+
+.vertical-grid-lines-grid > * {
+  background-color: rgb(230, 199, 61);
+  width: 2px;
+  height: 265px;
+  border-radius: 1px;
+}
+
+.horizontal-grid-lines-grid {
+  grid-template-rows: repeat(4, 54px);
+  top: 58px;
+  left: 10px;
+}
+
+.horizontal-grid-lines-grid > * {
+  background-color: rgb(230, 199, 61);
+  width: 265px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.vertical-line-grid,
+.horizontal-line-grid {
+  position: absolute;
+  display: grid;
+  gap: 42px;
+  justify-items: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.vertical-line-grid {
+  grid-template-columns: repeat(5, auto);
+}
+
+.horizontal-line-grid {
+  grid-template-rows: repeat(5, auto);
+}
+
+.vertical-line {
+  background-color: rgb(224, 101, 101);
+  width: 14px;
+  height: 230px;
+  opacity: 0;
+}
+
+.horizontal-line {
+  background-color: rgb(224, 101, 101);
+  width: 230px;
+  height: 14px;
+  opacity: 0;
+}
+
+.diagonal-left-to-right,
+.diagonal-right-to-left {
+  position: absolute;
+  background-color: rgb(224, 101, 101);
+  z-index: 0;
+}
+
+.diagonal-left-to-right {
+  width: 320px;
+  height: 14px;
+  transform: rotateZ(45deg);
+  opacity: 0;
+}
+
+.diagonal-right-to-left {
+  width: 14px;
+  height: 320px;
+  transform: rotateZ(45deg);
+  opacity: 0;
+}
+
+.active-line {
+  opacity: 1;
+}

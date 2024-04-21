@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BINGO Grid</title>
+
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/bingo-lines.css">
+    <link rel="stylesheet" href="css/general.css">
+
+  </head>
+  <body>
+    <div class="background-image"></div>
+    <div class="main-container">
+      <main class="content-container">
+        <div class="bingo-title">
+          <img class="wood-bg-image" src="images/Bingo-background.png">
+          <div class="bingo-letters-flex">
+            <div class="js-letter letter-o">
+              <p class="base-letter">O</p>
+              <p class="color-letter">O</p>
+            </div>
+            <div class="js-letter letter-g">
+              <p class="base-letter">G</p>
+              <p class="color-letter">G</p>
+            </div>
+            <div class="js-letter letter-n">
+              <p class="base-letter">N</p>
+              <p class="color-letter">N</p>
+            </div>
+            <div class="js-letter letter-i">
+              <p class="base-letter">I</p>
+              <p class="color-letter">I</p>
+            </div>
+            <div class="js-letter letter-b">
+              <p class="base-letter">B</p>
+              <p class="color-letter">B</p>
+            </div>
+          </div>
+        </div>
+        <div class="bingo-card">
+          <div class="vertical-grid-lines-grid">
+            <div class="vertical-grid-lines"></div>
+            <div class="vertical-grid-lines"></div>
+            <div class="vertical-grid-lines"></div>
+            <div class="vertical-grid-lines"></div>
+          </div>
+          <div class="horizontal-grid-lines-grid">
+            <div class="horizontal-grid-lines"></div>
+            <div class="horizontal-grid-lines"></div>
+            <div class="horizontal-grid-lines"></div>
+            <div class="horizontal-grid-lines"></div>
+          </div>
+          <div class="vertical-line-grid">
+            <div class="js-vertical-line-1 vertical-line"></div>
+            <div class="js-vertical-line-2 vertical-line"></div>
+            <div class="js-vertical-line-3 vertical-line"></div>
+            <div class="js-vertical-line-4 vertical-line"></div>
+            <div class="js-vertical-line-5 vertical-line"></div>
+          </div>
+          <div class="horizontal-line-grid">
+            <div class="js-horizontal-line-0 horizontal-line"></div>
+            <div class="js-horizontal-line-1 horizontal-line"></div>
+            <div class="js-horizontal-line-2 horizontal-line"></div>
+            <div class="js-horizontal-line-3 horizontal-line"></div>
+            <div class="js-horizontal-line-4 horizontal-line"></div>
+          </div>
+          <div class="js-diagonal-left-to-right diagonal-left-to-right"></div>
+          <div class="js-diagonal-right-to-left diagonal-right-to-left"></div>
+          <div class="js-numbers-grid-layout numbers-grid-layout"></div>
+          <div class="disable-card">
+            <div class="you-win">You<br>Win!</div>
+          </div>
+        </div>
+        <div class="buttons-container">
+          <div class="button-with-background">
+            <img class="new-button-background" src="./images/button-background.png">
+            <button title="Generate new" class="new-game-button" data-text="New" onclick="newGame()">New</button>
+          </div>
+          <div class="button-with-background">
+            <img class="action-button-background" src="./images/button-background.png">
+            <button title="Undo" class="undo-button" data-text="Undo" onclick="undoMove();">
+              <img class="undo-icon" src="images/undo.svg">
+            </button>
+          </div>
+          <div class="button-with-background">
+            <img class="action-button-background" src="./images/button-background.png">
+            <button title="Redo" class="redo-button" data-text="Redo" onclick="redoMove();">
+              <img class="redo-icon" src="images/redo.svg">
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+    
+    <script src="js/bingo-numbers.js"></script>
+    <script src="js/functionalities.js"></script>
+  </body>
+</html>
