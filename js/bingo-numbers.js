@@ -55,16 +55,19 @@ function coloringLetters() {
 
   const colorLetters = document.querySelectorAll('.color-letter');
   const disableCard = document.querySelector('.disable-card');
+  const youWinElem = document.querySelector('.you-win');
   if(colorLettersCount === 5) {
     colorLetters.forEach((colorLetterElem) => {
       colorLetterElem.classList.add('animate-letter')
     });
     disableCard.classList.add('activate-disable-card');
+    youWinElem.classList.add('animate-you-win');
   } else {
     colorLetters.forEach((colorLetterElem) => {
       colorLetterElem.classList.remove('animate-letter')
     });
     disableCard.classList.remove('activate-disable-card');
+    youWinElem.classList.remove('animate-you-win');
   }
   preColorLettersCount = colorLettersCount;
 }
