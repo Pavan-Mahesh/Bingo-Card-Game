@@ -12,12 +12,27 @@
   object-fit: fill;
 }
 
+.sign {
+  position: absolute;
+  top: 16px;
+  font-size: 36px;
+  color: whitesmoke;
+  --slides-color: rgb(145, 145, 145);
+  text-shadow:
+      0px 1px 0px var(--slides-color), 
+      0px 2px 0px var(--slides-color), 
+      0px 3px 0px var(--slides-color),
+      0px 3px 1px rgba(0, 0, 0, 1),
+      0px 4px 2px rgba(0, 0, 0, 1);
+}
+
 .bingo-letters-flex {
   position: absolute;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
+  margin-top: 32px;
 }
 
 .bingo-letters-flex > * {
@@ -36,7 +51,6 @@
 
 .base-letter,
 .color-letter {
-  font-family: Lilita One;
   font-size: 62px;
   margin: 0px;
 }
@@ -48,9 +62,10 @@
   text-shadow: 
       0px 2px 0px var(--slides-color),
       0px 4px 0px var(--slides-color),
-      0px 6px 2px rgba(0, 0, 0, 0.6),
-      0px 10px 4px rgba(0, 0, 0, 0.3),
-      0px 15px 8px rgba(0, 0, 0, 0.1);
+      0px 4px 1px rgba(0, 0, 0, 1),
+      0px 6px 2px rgba(0, 0, 0, 0.8),
+      0px 10px 4px rgba(0, 0, 0, 0.6),
+      0px 15px 8px rgba(0, 0, 0, 0.3);
 }
 
 .color-letter {
@@ -80,7 +95,7 @@
   .base-letter,
   .color-letter {
     font-size: 70px;
-    transform: translateY(-6px);
+    transform: translateY(-2px);
   }
 }
 
@@ -126,7 +141,6 @@
 .number-button {
   width: 42px;
   aspect-ratio: 1 / 1;
-  font-family: Lilita One;
   font-size: 24px;
   border: none;
   border-radius: 50%;
@@ -161,7 +175,6 @@
 }
 
 .you-win {
-  font-family: Lilita One;
   font-size: 48px;
   line-height: 58px;
   color: rgb(255, 255, 255);
@@ -230,7 +243,6 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  font-family: Lilita One;
   font-size: 32px;
   background-color: transparent;
   border: none;
